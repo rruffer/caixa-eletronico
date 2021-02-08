@@ -1,6 +1,7 @@
 package br.com.rruffer.caixa.eletronico.consumer;
 
-import org.springframework.jms.annotation.JmsListener;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import br.com.rruffer.caixa.eletronico.dto.ClienteDTO;
@@ -14,10 +15,16 @@ public class Consumer {
 		System.out.println(message);
 	}*/
 
-	@JmsListener(destination =  "calculo.aposentadoria")
+	/*@JmsListener(destination =  "calculo.aposentadoria")
 	public void consumer(String mensagem) {
 		ClienteDTO cliente = JsonUtil.deserializarJSON(mensagem, ClienteDTO.class);
 		System.out.println(cliente);
+	}*/
+	
+	@RabbitListener(queues ={"${queue.order.name}"})
+	public void receive(@Payload String mensagem) {
+		//ClienteDTO cliente = JsonUtil.deserializarJSON(mensagem, ClienteDTO.class);
+		System.out.println(mensagem);
 	}
 	
 }
