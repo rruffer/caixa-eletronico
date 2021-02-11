@@ -23,8 +23,8 @@ public class Consumer {
 	
 	@RabbitListener(queues ={"${queue.order.name}"})
 	public void receive(@Payload String mensagem) {
-		//ClienteDTO cliente = JsonUtil.deserializarJSON(mensagem, ClienteDTO.class);
-		System.out.println(mensagem);
+		ClienteDTO cliente = JsonUtil.deserializarJSON(mensagem, ClienteDTO.class);
+		System.out.println(cliente);
 	}
 	
 }
