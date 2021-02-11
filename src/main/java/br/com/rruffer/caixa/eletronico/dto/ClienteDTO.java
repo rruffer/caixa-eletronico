@@ -13,7 +13,8 @@ public class ClienteDTO implements Serializable {
 	private String email;
 	private Long totalSaldoAposentadoria;
 	private Integer qtdAnosAposentadoria;
-
+	private Long valorMensalAposentadoria;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -52,6 +53,14 @@ public class ClienteDTO implements Serializable {
 
 	public void setQtdAnosAposentadoria(Integer qtdAnosAposentadoria) {
 		this.qtdAnosAposentadoria = qtdAnosAposentadoria;
+	}
+
+	public Long getValorMensalAposentadoria() {
+		return valorMensalAposentadoria;
+	}
+
+	public void setValorMensalAposentadoria(Long valorMensalAposentadoria) {
+		this.valorMensalAposentadoria = valorMensalAposentadoria;
 	}
 
 	@Override
