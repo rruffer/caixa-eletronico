@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.rruffer.caixa.eletronico.dto.ClienteDTO;
 
-//@Service
+@Service
 public class CalculoService {
 
 	public void calculaAposentadoria(ClienteDTO clienteDTO) {
@@ -21,12 +21,6 @@ public class CalculoService {
 		clienteDTO.setValorMensalAposentadoria(result);
 		
 		
-	}
-	
-	
-	public static void main(String[] args) {
-		LocalDate date = LocalDate.now().minusYears(15);
-		System.out.println(date.until(LocalDate.now(), ChronoUnit.MONTHS));
 	}
 	
 }
