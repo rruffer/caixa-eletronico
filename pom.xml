@@ -15,7 +15,7 @@
 	<name>caixa-eletronico</name>
 	<description>Desafio BrasilPrev</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
